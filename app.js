@@ -5,7 +5,9 @@ const path = require("path");
 const ownersRouter = require("./routes/ownersRouter");
 const productsRouter = require("./routes/productsRouter");
 const usersRouter = require("./routes/usersRouter");
-const index = require("./routes/index");
+const indexRouter = require("./routes/index");
+
+require("dotenv").config();
 
 const db = require("./config/mongoose-connection")
 
@@ -18,7 +20,7 @@ app.set("view engine" , "ejs");
 app.use("/owners" , ownersRouter);
 app.use("/products" , productsRouter);
 app.use("/users" , usersRouter);
-app.use("/" , index);
+app.use("/" , indexRouter);
 
 
 
